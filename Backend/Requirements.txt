@@ -1,0 +1,9 @@
+flask
+flask-socketio
+pymongo
+bson
+langchain
+langgraph
+typing-extensions
+gunicorn
+eventlet

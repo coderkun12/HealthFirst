@@ -1,0 +1,36 @@
+name: Build & Deploy React App (CRA)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # or match your project's Node version
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: frontend
+
+      - name: Build the app
+        run: npm run build
+        working-directory: frontend
+
+      - name: Add .nojekyll (optional for GitHub Pages)
+        run: echo > frontend/build/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages           # Target branch
+          folder: frontend/build     # CRA build output
