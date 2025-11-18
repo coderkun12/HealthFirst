@@ -16,7 +16,7 @@ HealthFirst leverages a Flask backend to manage API routes and communication wit
 Steps to install and set up the project locally.
 ```bash
 # Example:
-git clone https://github.com/coderkun12/Health-Care-ChatBot.git
+git clone https://github.com/coderkun12/HealthFirst.git
 cd yourproject
 pip install -r requirements.txt
 ```
